@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <title>Portofoliu #1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #101010;
+      color: white;
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00ff00;
+      letter-spacing: 3px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00ff00;
+      transform: translateY(-5px);
+    }
+
+    
+    .hero {
+      height: 100vh;
+      background-image: url('https://via.placeholder.com/1600x900');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ddd;
+      margin-top: 10px;
+      animation: fadeIn 5s ease-out;
+    }
+
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #151515;
+    }
+
+    .about h2 {
+      font-size: 40px;
+      font-weight: 600;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #ddd;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    
+    .projects {
+      padding: 80px 20px;
+      background-color: #202020;
+    }
+
+    .projects h2 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #00ff00;
+      margin-bottom: 40px;
+    }
+
+    .project-card {
+      display: inline-block;
+      width: 30%;
+      background-color: #333;
+      border-radius: 10px;
+      margin: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .project-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .project-card p {
+      color: #bbb;
+      font-size: 16px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 20px rgba(0, 255, 0, 0.3);
+    }
+
+    
+    .contact {
+      padding: 80px 20px;
+      background-color: #151515;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: #ddd;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #555;
+      border-radius: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+    .contact-form button {
+      padding: 15px 30px;
+      background-color: #00ff00;
+      border: none;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #00cc00;
+    }
+
+    
+    footer {
+      background-color: #101010;
+      padding: 30px 0;
+      text-align: center;
+      color: #666;
+    }
+
+    footer a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav>
+    <div class="logo">Portfolio #1</div>
+    <ul>
+      <li><a href="acasa.php">Acasă</a></li>
+      <li><a href="#about">Despre mine</a></li>
+      <li><a href="#projects">Proiecte</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+  <div class="hero">
+    <div>
+      <h1>Salut, sunt Darius</h1>
+      <p>Un dezvoltator pasionat de creații uimitoare</p>
+    </div>
+  </div>
+
+  
+  <div class="about" id="about">
+    <h2>Despre mine</h2>
+    <p>Sunt un dezvoltator web cu experiență vastă în crearea de aplicații inovative și interactive. Îmi place să explorez noi tehnologii și să creez soluții care să îmbunătățească experiența utilizatorului. Pasiunea mea este să construiesc site-uri și aplicații care să arate uimitor și să funcționeze perfect. Am lucrat la mai multe proiecte, inclusiv platforme de comerț online, aplicații mobile și instrumente pentru îmbunătățirea productivității.</p>
+  </div>
+
+  
+  <div class="projects" id="projects">
+    <h2>Proiecte</h2>
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Proiect 1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, magnam temporibus odit, neque eum quisquam debitis id, nam quis dolore libero sed eveniet dolorum ducimus eos nemo dolor laboriosam veniam.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Proiect 2</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt alias deleniti autem obcaecati maxime cum voluptatibus cupiditate repellat vero qui dolorem, necessitatibus id. Consequatur error quibusdam eligendi dolorem? Cum, molestiae!</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Proiect 3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque velit laudantium provident. Natus enim saepe libero, quos cumque harum itaque omnis aut officia architecto tempore veniam quisquam temporibus rerum quo.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="contact" id="contact">
+    <h2>Contactează-mă</h2>
+    <p>Vrei să colaborezi? Poți să mă contactezi folosind formularul de mai jos:</p>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Numele tău" required>
+      <input type="email" name="email" placeholder="Email-ul tău" required>
+      <textarea name="message" placeholder="Mesajul tău" required></textarea>
+      <button type="submit">Trimite</button>
+    </form>
+  </div>
+
+  
+  <footer>
+    <p>&copy; 2025 SkillForge</p>
+    <p><a href="https://www.instagram.com/drw2068">Instagram</a> | <a href="https://github.com/KingAndrew2068">GitHub</a></p>
+  </footer>
+
+</body>
+</html>
