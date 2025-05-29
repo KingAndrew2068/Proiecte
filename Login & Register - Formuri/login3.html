@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login #3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .login-container {
+      width: 400px;
+      padding: 40px;
+      background: #1c1f2b;
+      text-align: center;
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(28deg, #6a69d3, #00ff99, #3b9c9c, #6a69d3, #3b9c9c,#3b9c9c,#00ff99);
+      background-size: 400% 400%;
+      z-index: -1;
+      animation: gradient-animation 6s linear infinite;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+      25%{
+        background-position: 50% 100%;
+      }
+      75%{
+        background-position: 50% 0%;
+      }
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #f5f5f5;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      background: #333;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #00ff99;
+      box-shadow: 0 0 10px #00ff99;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 15px 0;
+      background-color: #111;
+      border: 2px solid #00ff99;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #00ff99;
+      color: #111;
+      transform: scale(1.05);
+    }
+
+    .login-btn:active {
+      background-color: #00cc66;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .forgot-password {
+      color: grey;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .forgot-password:hover {
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>Login</h1>
+    <form>
+      <input type="text" placeholder="Username" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login #1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #232526, #414345);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-size: 16px;
+      overflow: hidden;
+    }
+
+    .form-container {
+      position: relative;
+      width: 380px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .form-container h2 {
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: bold;
+      animation: slide-in 1s ease-out;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid #ffffff;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+      border-color: #1abc9c;
+      box-shadow: 0 0 15px rgba(26, 188, 156, 0.8);
+    }
+
+    button {
+      padding: 15px;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #16a085;
+      transform: scale(1.05);
+    }
+
+    .toggle-form {
+      font-size: 14px;
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-form:hover {
+      color: #1abc9c;
+    }
+
+    .animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(26, 188, 156, 0.2);
+      border-radius: 50%;
+      animation: bubble-animation 5s ease-in-out infinite;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    @keyframes bubble-animation {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    }
+
+    @keyframes slide-in {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .forgot-password {
+      font-size: 14px;
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .forgot-password:hover {
+      color: #1abc9c;
+    }
+
+  </style>
+</head>
+<body>
+
+ 
+  <div class="form-container" id="login-form">
+    <div class="animation"></div>
+    <h2>Login</h2>
+    <form action="#" method="POST">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <a href="#" class="toggle-form" onclick="toggleForms()">Don't have an account? Register</a>
+    </form>
+  </div>
+
+  
+  <div class="form-container" id="register-form" style="display: none;">
+    <div class="animation"></div>
+    <h2>Register</h2>
+    <form action="#" method="POST">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
+      <button type="submit">Register</button>
+      <a href="#" class="toggle-form" onclick="toggleForms()">Already have an account? Login</a>
+    </form>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+      } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
